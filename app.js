@@ -17,16 +17,6 @@ const mongoose = require("mongoose");
 
 
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAjEM57gvBhjUwYjmFmA2eodgylhZ9fxTU",
-  authDomain: "ieee-onu.firebaseapp.com",
-  projectId: "ieee-onu",
-  storageBucket: "ieee-onu.firebasestorage.app",
-  messagingSenderId: "874940193158",
-  appId: "1:874940193158:web:dd87952c75cdb49a2db407",
-  measurementId: "G-Q1V9E2CYH2"
-};
-
 // Initialize Firebase
 // const db = firebase.initializeApp(firebaseConfig);
 // const 
