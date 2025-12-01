@@ -2,6 +2,10 @@ body {
     min-height: 100vh;
     position: relative;
     /* background-color: black; */
+    background-color: #00629B;
+}
+.welcome-text{
+    color:white;
 }
 .container-fluid {
     padding-top: 70px;

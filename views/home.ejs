@@ -1,6 +1,6 @@
 <%- include('partials/header'); %>
-<h1>IEEE</h1>
-<p>Welcome to IEEE at ONU, here you can find and register for our events!</p>
+<h1 class="welcome-text">IEEE</h1>
+<p class="welcome-text">Welcome to IEEE at ONU, here you can find and register for our events!</p>
 <div class="post-container">
 <% posts.forEach(post => { %>
    <a class="event-link" href="/posts/<%= post._id %>">
@@ -10,8 +10,8 @@
             <p></p>
          </div>
          <div class="post-item">
-            <h2><%= post.postTitle %></h2>
-            <p class="postBody"><%= _.truncate(post.postBody, {'length': 100, 'omission': ' ...'}) %></p>
+            <h2><%= post.eventTitle %></h2>
+            <p class="postBody"><%= _.truncate(post.eventDescription, {'length': 100, 'omission': ' ...'}) %></p>
          </div> 
       </div>
    </a>
