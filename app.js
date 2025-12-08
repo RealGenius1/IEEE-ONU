@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/about", (req, res) => {
-  res.render('about', { aboutContent: aboutContent })
+  res.render('about')
 })
 
 app.get("/contact", (req, res) => {
