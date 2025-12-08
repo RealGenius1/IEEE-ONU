@@ -1,10 +1,42 @@
 <%- include('partials/header'); %>
+
+<link rel="stylesheet" href="../css/compose.css">
+
 <h1>Compose</h1>
 <form action="/compose" method="post">
     <label class="form-label">Title</label>
-    <input type="text" name="postTitle" class="form-control">
-    <label class="form-label">Post</label>
-    <textarea cols="30" rows="10" class="form-control" name="postBody"></textarea>
+    <input type="text" name="eventTitle" class="form-control">
+
+    <label class="form-label">Description</label>
+    <textarea cols="30" rows="10" class="form-control" name="eventDescription"></textarea>
+    <!-- Make an option select -->
+    <label class="form-label">Image Selection</label>
+
+    <label class="form-label">
+    <input type="radio" id="image1" name="eventImage" value="1">
+    <img src="images\IEEE-ONU-Logo.png" class="image-option">
+    <br>
+    </label>
+
+    <label>
+        <input type="radio" id="image2" name="eventImage" value="2">
+        <img src="images\IEEE-Logo.png" class="image-option">
+    </label>
+
+    <br>
+    <label class="form-label">RSVP Link</label>
+    <input type="text" name="eventLink" class="form-control">
+
+    <label class="form-label">Start Time</label>
+    <input type="datetime-local" name="eventStart" class="form-control">
+
+    <label class="form-label">End Time</label>
+    <input type="datetime-local" name="eventEnd" class="form-control">
+
+    <label class="form-label">Event Location</label> <br>
+    <input class="text" name="eventLocation" class="form-control">
+    <br>
+
     <button type="submit" class="btn btn-primary publish">Publish</button>
 </form>
 <%- include('partials/footer'); %>

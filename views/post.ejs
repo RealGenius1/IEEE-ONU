@@ -1,5 +1,60 @@
 <%- include('partials/header'); %>
-<h1><%= eventTitle %></h1>
-<p><%= eventLink %></p>
-<p><%= postBody %></p>
+<% let image = ""; %>
+<% switch(post.eventImage) {
+    case 1:
+        image = "../images/temp_image.jfif";
+        break;
+    case 2:
+        image = "../images/IEEE-Logo.png";
+        break;
+    case 3:
+        image = "../images/IEEE-ONU-Logo.png";
+        break;
+} %>
+<link rel="stylesheet" href="../css/post.css">
+<div class="content-wrapper">
+    <div class="post-top-content">
+        <div class="post-image-content">
+            <img src="<%= image %>">
+        </div>
+        <div class="post-content">
+            <div class="post-title">
+                <h1><%= post.eventTitle %></h1>
+            </div>
+            <div class="post-info">
+                <div class="post-time">
+                    <div class="time-icon" size="40">
+                            <svg width="fit-content" height="fit-content" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10H3M16 2V6M8 2V6M7.8 22H16.2C17.8802 22 18.7202 22 19.362 21.673C19.9265 21.3854 20.3854 20.9265 20.673 20.362C21 19.7202 21 18.8802 21 17.2V8.8C21 7.11984 21 6.27976 20.673 5.63803C20.3854 5.07354 19.9265 4.6146 19.362 4.32698C18.7202 4 17.8802 4 16.2 4H7.8C6.11984 4 5.27976 4 4.63803 4.32698C4.07354 4.6146 3.6146 5.07354 3.32698 5.63803C3 6.27976 3 7.11984 3 8.8V17.2C3 18.8802 3 19.7202 3.32698 20.362C3.6146 20.9265 4.07354 21.3854 4.63803 21.673C5.27976 22 6.11984 22 7.8 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    </div>
+                    <div class="event-time">
+                        <strong>Date and Time</strong>
+                        <p><%= post.eventStart %> to</p>
+                        <p><%= post.eventEnd %></p>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="post-location">
+                    <div class="loc-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                        </svg>
+                    </div>
+                    <div class="event-loc">
+                        <strong>Location</strong>
+                        <p><%= post.eventLocation %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-desc">
+        <h1>Description</h1>
+        <p><%= post.eventDescription %></p>
+        <br>
+        <p>Please sign up for the event <a href="https://<%= post.eventLink %>">here!</a></p>
+    </div>
+</div>
 <%- include('partials/footer'); %>

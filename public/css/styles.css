@@ -94,3 +94,8 @@ body {
     color: inherit;
 
 }
+
+.image-option{
+    width: 75%;
+    object-fit: cover;
+}

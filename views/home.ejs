@@ -1,12 +1,24 @@
 <%- include('partials/header'); %>
+<% let image = ""; %>
 <h1 class="welcome-text">IEEE</h1>
 <p class="welcome-text">Welcome to IEEE at ONU, here you can find and register for our events!</p>
 <div class="post-container">
 <% posts.forEach(post => { %>
+   <% switch(post.eventImage) {
+      case 1:
+         image = "images/temp_image.jfif";
+         break;
+      case 2:
+         image = "images/IEEE-Logo.png";
+         break;
+      case 3:
+         image = "images/IEEE-ONU-Logo.png";
+         break;
+   } %>
    <a class="event-link" href="/posts/<%= post._id %>">
       <div class="post-card" >
          <div class="post-image">
-            <img src="images/temp_image.jfif">
+            <img src="<%= image %>">
             <p></p>
          </div>
          <div class="post-item">
