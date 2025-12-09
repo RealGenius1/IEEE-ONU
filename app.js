@@ -36,18 +36,20 @@ const eventSchema = {
 const Post = mongoose.model("events", eventSchema);
 
 app.get("/", (req, res) => {
-  Post.find({}, (err, posts) => {
-    console.log(posts);
-    res.render("home", { homeStartingContent: homeStartingContent, posts: posts });
-  })
-})
+  Post.find({})
+    .sort({eventStart: 1})
+    .exec((err, posts) => {
+      console.log(posts);
+      res.render("home", { posts: posts });
+    });
+});
 
 app.get("/about", (req, res) => {
   res.render('about')
 })
 
 app.get("/contact", (req, res) => {
-  res.render('contact', { contactContent: contactContent })
+  res.render('contact', { contactContent: "contactContent" })
 })
 
 app.get("/compose", (req, res) => {

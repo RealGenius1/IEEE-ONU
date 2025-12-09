@@ -18,9 +18,10 @@
     color:white;
 }
 
-.post-image-content{
-    display:grid;
-    width: 150%;
+.post-image-content img{
+    width:50%;
+    height:fit-content;
+    padding-top:8px;
 }
 .post-content{
     display:block;

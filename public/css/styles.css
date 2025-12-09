@@ -20,6 +20,18 @@ body {
     font-size: 12px;
     letter-spacing: 5px;
 }
+.navbar-header img{
+    height:fit-content;
+    width:20%;
+}
+.navbar-header{
+    display:flex;
+}
+.navbar-nav{
+    display:flex;
+    align-items: center;
+    height:fit-content;
+}
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }

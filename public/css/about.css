@@ -1,0 +1,43 @@
+body h1{
+    color:white;
+}
+.about-content{
+    display:grid;
+    grid-template-columns: auto auto;
+    gap:10px;
+}
+.office-card{
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform .2s ease;
+  border-style: solid;
+  border-radius: 1px solid black;
+  max-width: auto;
+}
+.advisor{
+    grid-column: 1/3;
+    justify-self: center;
+    width:fit-content;
+    /* align-items:center; */
+}
+.office-content{
+    display:grid;
+    justify-content: center;
+    grid-template-rows: auto auto;
+}
+.office-image{
+    /* max-width: 150px; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.office-image img{
+    /* width:auto; */
+    width:50%;
+    height:fit-content;
+    padding-top:8px;
+    object-fit: cover;
+}
