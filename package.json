@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "alert": "^6.0.2",
     "body-parser": "^1.18.3",
     "dotenv": "^17.2.3",
     "ejs": "^2.6.1",

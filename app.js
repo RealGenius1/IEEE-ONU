@@ -1,6 +1,7 @@
 //jshint esversion:6
 
 const express = require("express");
+const alert = require("alert");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
@@ -9,8 +10,9 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 
-const db_password = process.env.DB_PASSWORD;
 
+const db_password = process.env.DB_PASSWORD;
+const password = process.env.PASSWORD;
 
 const app = express();
 app.locals._ = _
@@ -58,20 +60,25 @@ app.get("/compose", (req, res) => {
 
 app.post("/compose", (req, res) => {
   //{postTitle: req.body.postTitle, postBody: req.body.postBody}
-  const post = new Post({
-    eventTitle: req.body.eventTitle,
-    eventDescription: req.body.eventDescription,
-    eventImage: req.body.eventImage,
-    eventLink: req.body.eventLink,
-    eventStart: req.body.eventStart,
-    eventEnd: req.body.eventEnd,
-    eventLocation: req.body.eventLocation
-  })
-  post.save(err => {
-    if (!err) {
-      res.redirect("/");
-    }
-  });
+  if(req.body.password == password){
+    const post = new Post({
+      eventTitle: req.body.eventTitle,
+      eventDescription: req.body.eventDescription,
+      eventImage: req.body.eventImage,
+      eventLink: req.body.eventLink,
+      eventStart: req.body.eventStart,
+      eventEnd: req.body.eventEnd,
+      eventLocation: req.body.eventLocation
+    })
+    post.save(err => {
+      if (!err) {
+        res.redirect("/");
+      }
+    });
+  } else {
+    alert.toast("Invalid password");
+    res.redirect("/");
+  }
 })
 
 app.get("/posts/:postId", (req, res) => {
