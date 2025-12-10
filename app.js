@@ -26,8 +26,8 @@ const eventSchema = {
   eventDescription: String,
   eventImage: Number,
   eventLink: String,
-  eventStart: String,
-  eventEnd: String,
+  eventStart: Date,
+  eventEnd: Date,
   eventLocation: String,
   eventTitle: String,
 }
@@ -37,7 +37,7 @@ const Post = mongoose.model("events", eventSchema);
 
 app.get("/", (req, res) => {
   Post.find({})
-    .sort({eventStart: 1})
+    .sort({eventStart: -1})
     .exec((err, posts) => {
       console.log(posts);
       res.render("home", { posts: posts });

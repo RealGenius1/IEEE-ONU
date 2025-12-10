@@ -18,11 +18,25 @@
     color:white;
 }
 
+.post-image-content{
+    place-self: center;
+}
+
+#img_1 img{
+    width:75%; 
+}
+
+#img_2 img{
+    width:50%;
+    margin-left:10%;
+}
+
 .post-image-content img{
     width:50%;
     height:fit-content;
     padding-top:8px;
 }
+
 .post-content{
     display:block;
     max-width: 50rem;

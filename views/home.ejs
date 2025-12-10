@@ -6,18 +6,18 @@
 <% posts.forEach(post => { %>
    <% switch(post.eventImage) {
       case 1:
-         image = "images/temp_image.jfif";
+         image = "images/IEEE-ONU-Logo.png";
          break;
       case 2:
          image = "images/IEEE-Logo.png";
          break;
       case 3:
-         image = "images/IEEE-ONU-Logo.png";
+         image = "images/temp_image.jfif";
          break;
    } %>
    <a class="event-link" href="/posts/<%= post._id %>">
       <div class="post-card" >
-         <div class="post-image">
+         <div class="post-image" id="card_img_<%= post.eventImage %>">
             <img src="<%= image %>">
             <p></p>
          </div>
