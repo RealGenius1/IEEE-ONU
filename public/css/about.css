@@ -15,12 +15,30 @@ body h1{
   border-style: solid;
   border-radius: 1px solid black;
   max-width: auto;
+  height:100%;
+
 }
 .advisor{
     grid-column: 1/3;
     justify-self: center;
-    width:fit-content;
+    width:50%;
+    margin-right:10%;
     /* align-items:center; */
+}
+.advisor strong{
+    padding-left:40px;
+}
+
+.secretary strong{
+    padding-left:5px;
+}
+.treasure strong{
+    padding-left:15px;
+}
+.card-vp{
+    margin-top:25px;
+    display:grid;
+    place-self: center;
 }
 .office-content{
     display:grid;
@@ -32,6 +50,9 @@ body h1{
     display:flex;
     justify-content: center;
     align-items: center;
+    object-fit: cover;
+    /* width:fit-content; */
+    margin-bottom:15px;
 
 }
 .office-image img{
@@ -40,4 +61,8 @@ body h1{
     height:fit-content;
     padding-top:8px;
     object-fit: cover;
+}
+
+.pres .office-content strong{
+    padding-left:15px;
 }
